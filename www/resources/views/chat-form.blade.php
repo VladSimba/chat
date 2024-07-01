@@ -164,12 +164,14 @@
                                         <div class="chat-hour">07:00 <span class="fa fa-check-circle"></span></div>
                                     </li>
                                 </ul>
-                                <div class="form-group mt-3 mb-0">
-                                    <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-                                </div>
-                                <div class="form-group mt-3 mb-0">
-                                    <button type="button" class="btn btn-primary float-right">Submit</button>
-                                </div>
+                                <form>
+                                    <div class="form-group mt-3 mb-0">
+                                        <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
+                                    </div>
+                                    <div class="form-group mt-3 mb-0">
+                                        <button type="button" class="btn btn-primary float-right">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
