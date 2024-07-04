@@ -32,81 +32,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                    <ul class="users">
-                                        @foreach($chats as $chatItem)
-                                            <li class="person" data-chat="person5">
-                                                <a href="{{ route('chat', ['chat' => $chatItem->id]) }}">
-                                                    <div class="user">
-                                                        <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
-                                                        <span class="status away"></span>
-                                                    </div>
-                                                    <p class="name-time">
-                                                        <span class="name">{{ $chatItem->name }}</span>
-                                                        {{--                                            <span class="time">05/02/2019</span>--}}
-                                                    </p>
-                                                </a>
-                                                <a href="{{ route('show-edit-chat', ['chat' => $chatItem->id]) }}">
-                                                    <p class="name-time">
-                                                        <span class="name">Edit chat</span>
-                                                    </p>
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
-                            <div class="selected-user">
-                                    <span>To: <span class="name">{{ $chat->name }}</span></span>
-                            </div>
-                            <div class="chat-container">
-                                <ul class="chat-box chatContainerScroll">
-                                    @foreach($messages as $message)
-                                        @if(auth()->user()->id == $message->user_id)
-                                            <form method="post" action="{{ route('delete-message', ['message' => $message->id]) }}">
-                                                @csrf
-                                                <button type="submit">Delete message</button>
-                                            </form>
-                                            <form method="post" action="{{ route('edit-message', ['message' => $message->id]) }}">
-                                                @csrf
-                                                <div class="form-group mt-3 mb-0">
-                                                    <textarea name="text" class="form-control" rows="3" placeholder="{{ $message->text }}"></textarea>
+                                <ul class="users">
+                                    @foreach($chats as $chatItem)
+                                        <li class="person" data-chat="person5">
+                                            <a href="{{ route('chat', ['chat' => $chatItem->id]) }}">
+                                                <div class="user">
+                                                    <img src="https://www.bootdey.com/img/Content/avatar/avatar5.png" alt="Retail Admin">
+                                                    <span class="status away"></span>
                                                 </div>
-                                                <div class="form-group mt-3 mb-0">
-                                                    <button type="submit" class="btn btn-primary float-right">Edit</button>
-                                                </div>
-                                            </form>
-                                            <li class="chat-right">
-                                                <div class="chat-avatar">
-                                                    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                                    <div class="chat-name">Russell</div>
-                                                </div>
-                                                <div class="chat-text">{{ $message->text }}</div>
-                                                <div class="chat-hour">07:00 <span class="fa fa-check-circle"></span></div>
-                                            </li>
-                                        @else
-                                            <li class="chat-left">
-                                                <div class="chat-avatar">
-                                                    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
-                                                    <div class="chat-name">Russell</div>
-                                                </div>
-                                                <div class="chat-text">{{ $message->text }}</div>
-                                                <div class="chat-hour">07:00 <span class="fa fa-check-circle"></span></div>
-                                            </li>
-                                        @endif
-
-
+                                                <p class="name-time">
+                                                    <span class="name">{{ $chatItem->name }}</span>
+                                                    {{--                                            <span class="time">05/02/2019</span>--}}
+                                                </p>
+                                            </a>
+                                            <a href="{{ route('show-edit-chat', ['chat' => $chatItem->id]) }}">
+                                                <p class="name-time">
+                                                    <span class="name">Edit chat</span>
+                                                </p>
+                                            </a>
+                                        </li>
                                     @endforeach
                                 </ul>
-                                <form method="post" action="{{ route('add-massage', ['chat' => $chat->id]) }}">
-                                    @csrf
-                                    <div class="form-group mt-3 mb-0">
-                                        <textarea name="text" class="form-control" rows="3" placeholder="Type your message here..."></textarea>
-                                    </div>
-                                    <div class="form-group mt-3 mb-0">
-                                        <button type="submit" class="btn btn-primary float-right">Submit</button>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -490,3 +436,4 @@
 </script>
 </body>
 </html>
+

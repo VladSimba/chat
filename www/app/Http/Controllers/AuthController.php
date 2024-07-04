@@ -25,14 +25,14 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        return redirect(route('chat'));
+        return redirect(route('chat-home'));
     }
 
     public function logoutProcess()
     {
         auth()->logout();
 
-        return redirect(route('chat'));
+        return redirect(route('chat-home'));
     }
 
     public function showLoginForm()
@@ -45,9 +45,9 @@ class AuthController extends Controller
         $isUserExists = auth()->attempt($request->validated(), true);
 
         if ($isUserExists) {
-            return redirect(route('chat'));
+            return redirect(route('chat-home'));
         }
-        return redirect(route('show-login-form'))->withErrors(['Invalid username or password']) ;
+        return redirect(route('login'))->withErrors(['name' => 'Invalid username or password']) ;
     }
 
 }

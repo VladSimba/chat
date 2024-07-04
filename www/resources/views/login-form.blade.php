@@ -23,7 +23,7 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                 <input name="name" type="text" class="form-control" placeholder="Username">
-                                @error('text')
+                                @error('name')
                                 <p style="color: #FF2D20">{{$errors}}</p>
                                 @enderror
                             </div>

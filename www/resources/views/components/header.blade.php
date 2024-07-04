@@ -2,12 +2,13 @@
     <ul>
         @guest()
             <li><a href="{{ route('show-registration-form') }}">Registration</a></li>
-            <li><a href="{{ route('show-login-form') }}">Login</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
 
         @endguest
 
         @auth()
             <li><a href="{{ route('account') }}">Account</a></li>
+                <li><a href="{{ route('add-chat') }}">Сreate chat</a></li>
 
 
             <li>
